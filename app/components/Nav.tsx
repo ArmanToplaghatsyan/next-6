@@ -20,9 +20,33 @@ export const Nav = () => {
             className={`${styles.link} ${pathname === '/profile' ? styles.active : ''}`}
             href="/profile"
           >
-            profile
+            Profile
           </Link>
-          <button>logout</button>
+          <Link
+            className={`${styles.link} ${pathname === '/addProduct' ? styles.active : ''}`}
+            href="/addProduct"
+          >
+            AddProduct
+          </Link>
+          <Link
+            className={`${styles.link} ${pathname === '/addCategory' ? styles.active : ''}`}
+            href="/addCategory"
+          >
+            AddCategory
+          </Link>
+          <Link
+            className={`${styles.link} ${pathname === '/categories' ? styles.active : ''}`}
+            href="/categories"
+          >
+            Categories
+          </Link>
+          <Link
+            className={`${styles.link} ${pathname === '/settings' ? styles.active : ''}`}
+            href="/settings"
+          >
+            Settings
+          </Link>
+          <button>Log Out</button>
         </>
       ) : (
         <>
@@ -38,7 +62,7 @@ export const Nav = () => {
             }`}
             href="/register"
           >
-            register
+            Register
           </Link>
           <Link
             className={`${styles.link} ${
@@ -46,7 +70,7 @@ export const Nav = () => {
             }`}
             href="/users"
           >
-            users
+            Users
           </Link>
         </>
       )}

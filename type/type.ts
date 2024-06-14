@@ -27,3 +27,17 @@ export interface ILogin {
   email: string;
   password: string;
 }
+
+export interface IProductUpdate {
+  title: string;
+  price: number;
+}
+
+export interface IFilter {
+  title: string;
+  price_min: number;
+  price_max: number;
+  categoryId: number;
+  offset: number;
+  limit: number;
+}

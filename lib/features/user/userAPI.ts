@@ -31,7 +31,8 @@ export const updateUserAPI = async (id: number, user: IUser) => {
 
 export const loginAPI = async (user: ILogin) => {
   const { data } = await axios.post(
-    ' https://api.escuelajs.co/api/v1/auth/login', user
+    ' https://api.escuelajs.co/api/v1/auth/login',
+    user,
   );
 
   return data;
@@ -44,6 +45,14 @@ export const profileAPI = async () => {
     {
       headers: { Authorization: `Bearer ${token}` },
     },
+  );
+
+  return data;
+};
+
+export const uploadFile = async (file: FormData) => {
+  const { data } = await axios.post(
+    'https://api.escuelajs.co/api/v1/files/upload', file
   );
 
   return data;

@@ -7,6 +7,7 @@ import {
   loginAPI,
   profileAPI,
   updateUserAPI,
+  uploadFile,
 } from './userAPI';
 import { createAppSlice } from '@/lib/createAppSlice';
 
@@ -65,6 +66,9 @@ export const userSlice = createAppSlice({
         },
       },
     ),
+    uploadFileData: create.asyncThunk(async (file: FormData) => {
+      return await uploadFile(file);
+    }),
   }),
   selectors: {
     selelctUser: (state) => state.user,
@@ -72,5 +76,13 @@ export const userSlice = createAppSlice({
   },
 });
 
-export const {getUsersByIdData, getUsersData, createUserData, updateUserData, loginData, profileData} = userSlice.actions;
-export const {selelctUser, selelctUsers} = userSlice.selectors;
+export const {
+  getUsersByIdData,
+  getUsersData,
+  createUserData,
+  updateUserData,
+  loginData,
+  profileData,
+  uploadFileData,
+} = userSlice.actions;
+export const { selelctUser, selelctUsers } = userSlice.selectors;
